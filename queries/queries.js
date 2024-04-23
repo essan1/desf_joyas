@@ -18,11 +18,23 @@ const joyasQueryHateoas = () => {
 };
 
 const joyasCategoryQueries = (category) => {
-    const results = joyas.filter((joya) => joya.category === category)
-    return {
-        cantidad: results.length,
-        data: results
-    }
-}
+  const results = joyas.filter((joya) => joya.category === category);
+  return {
+    cantidad: results.length,
+    data: results,
+  };
+};
 
-export { joyasQueryHateoas, joyasCategoryQueries  };
+const joya = (id) => {
+  return results.find(
+    (e) => e.id === Number(id));
+};
+
+const joyasFieldQuery = (joya, campo) => {
+  for (const propiedad in joya) {
+    if (!campo.includes(propiedad)) delete joyas[propiedad];
+  }
+  return joya;
+};
+
+export { joyasQueryHateoas, joyasCategoryQueries, joya, joyasFieldQuery };
