@@ -17,4 +17,12 @@ const joyasQueryHateoas = () => {
   };
 };
 
-export { joyasQueryHateoas };
+const joyasCategoryQueries = (category) => {
+    const results = joyas.filter((joya) => joya.category === category)
+    return {
+        cantidad: results.length,
+        data: results
+    }
+}
+
+export { joyasQueryHateoas, joyasCategoryQueries  };

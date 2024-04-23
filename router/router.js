@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 
-import { hateoas } from "../controller/controller.js"
+import { hateoas, joyasCategory } from "../controller/controller.js";
 
 const router = express.Router();
 const __dirname = import.meta.dirname;
@@ -12,6 +12,8 @@ router.get("/", (req, res) => {
 });
 
 router.get("/joyas", hateoas);
+
+router.get("/joyas/categoria/:categoria", joyasCategory)
 
 
 
