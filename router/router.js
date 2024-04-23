@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 
-//import { 'queries' }  from '../queries'
+import { hateoas } from "../controller/controller.js"
 
 const router = express.Router();
 const __dirname = import.meta.dirname;
@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
   res.send("jaja");
 });
 
-
+router.get("/joyas", hateoas);
 
 
 
